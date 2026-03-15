@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản</title>
+    <link rel="stylesheet" href="2_1.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registerForm">
+            <h2>Tạo Tài Khoản</h2>
+            
+            <div class="form-group" id="group-fullname">
+                <label>Họ và tên</label>
+                <span id="nameCount" style="font-size: 12px; color: #666;">0/50</span>
+                <input type="text" id="fullname" placeholder="Nhập ít nhất 3 ký tự...">
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group" id="group-email">
+                <label>Email</label>
+                <input type="text" id="email" placeholder="example@domain.com">
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group" id="group-phone">
+                <label>Số điện thoại</label>
+                <input type="text" id="phone" placeholder="10 chữ số, bắt đầu bằng 0...">
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group" id="group-password">
+                <label>Mật khẩu</label>
+                <div style="position: relative;">
+        <span id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 14px;">Hiện mật khẩu</span>
+    </div>
+                <input type="password" id="password" placeholder="Tối thiểu 8 ký tự (A, a, 1)...">
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group" id="group-confirmPassword">
+                <label>Xác nhận mật khẩu</label>
+                <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu...">
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group" id="group-gender">
+                <label>Giới tính</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Nam"> Nam</label>
+                    <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+                    <label><input type="radio" name="gender" value="Khác"> Khác</label>
+                </div>
+                <div class="error-msg"></div>
+            </div>
+
+            <div class="form-group" id="group-terms">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="terms"> Tôi đồng ý với điều khoản dịch vụ
+                </label>
+                <div class="error-msg"></div>
+            </div>
+
+            <button type="submit" id="btnSubmit">Đăng Ký</button>
+        </form>
+
+        <div id="successMsg" class="success-container" style="display: none;">
+            <h2>Đăng ký thành công! 🎉</h2>
+            <p>Chào mừng, <strong id="displayUserName"></strong>!</p>
+            <button onclick="location.reload()">Quay lại</button>
+        </div>
+    </div>
+
+    <script src="2_1.js"></script>
+</body>
+</html>

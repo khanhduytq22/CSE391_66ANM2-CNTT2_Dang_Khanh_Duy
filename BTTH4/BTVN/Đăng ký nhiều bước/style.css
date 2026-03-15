@@ -1,0 +1,31 @@
+:root {
+    --primary: #4f46e5;
+    --gray: #e5e7eb;
+}
+
+body { font-family: 'Segoe UI', sans-serif; background: #f3f4f6; display: flex; justify-content: center; padding: 50px; }
+.container { background: white; padding: 30px; border-radius: 12px; width: 500px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+
+.progress-container { display: flex; justify-content: space-between; position: relative; margin-bottom: 30px; }
+.progress-container::before { content: ""; background: var(--gray); position: absolute; top: 50%; transform: translateY(-50%); height: 4px; width: 100%; z-index: 1; }
+.progress-bar { background: var(--primary); position: absolute; top: 50%; transform: translateY(-50%); height: 4px; width: 0%; z-index: 2; transition: 0.3s; }
+.step-indicator { width: 30px; height: 30px; background: white; border: 4px solid var(--gray); border-radius: 50%; z-index: 3; display: flex; align-items: center; justify-content: center; font-weight: bold; transition: 0.3s; }
+.step-indicator.active { border-color: var(--primary); color: var(--primary); }
+
+.step { display: none; }
+.step.active { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+
+.form-group { margin-bottom: 15px; }
+label { display: block; font-size: 14px; margin-bottom: 5px; font-weight: 600; }
+input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+.error-msg { color: #ef4444; font-size: 12px; margin-top: 4px; min-height: 16px; }
+
+.summary { background: #f8fafc; padding: 15px; border-radius: 8px; line-height: 1.8; }
+.summary p { margin: 0; border-bottom: 1px solid #eee; padding: 5px 0; }
+
+.button-group { display: flex; justify-content: space-between; margin-top: 25px; }
+button { padding: 10px 25px; border-radius: 6px; cursor: pointer; border: none; font-weight: bold; }
+#btnNext, #btnSubmit { background: var(--primary); color: white; }
+#btnPrev { background: var(--gray); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
